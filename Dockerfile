@@ -17,6 +17,11 @@ FROM websphere-liberty:microProfile
 
 COPY /target/liberty/wlp/usr/servers/defaultServer /config/
 
+#Grant write access to apps folder, this is to support old and new docker versions.
+USER root
+RUN chmod g+w /config/apps
+USER 1001
+
 # COPY ltpa.keys /output/resources/security/ltpa.keys
 RUN installUtility install --acceptLicense defaultServer
 
