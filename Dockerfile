@@ -13,7 +13,8 @@
 #   limitations under the License.
 
 # FROM openliberty/open-liberty:microProfile1
-FROM websphere-liberty:microProfile
+FROM websphere-liberty:18.0.0.3-microProfile
+USER root
 
 COPY /target/liberty/wlp/usr/servers/defaultServer /config/
 
