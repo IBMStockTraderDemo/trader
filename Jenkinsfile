@@ -1,5 +1,5 @@
 @Library('MicroserviceBuilder') _
 microserviceBuilderPipeline {
   image = 'trader'
-  test = 'false'
+  test = 'false' 
 }

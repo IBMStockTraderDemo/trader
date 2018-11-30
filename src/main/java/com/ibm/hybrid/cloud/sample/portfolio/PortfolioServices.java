@@ -49,7 +49,10 @@ import javax.servlet.http.HttpServletRequest;
 
 @RequestScoped
 public class PortfolioServices {
-	private static final String PORTFOLIO_SERVICE = "http://portfolio-service:9080/portfolio";
+//  This is the real line of code
+//	private static final String PORTFOLIO_SERVICE = "http://portfolio-service:9080/portfolio";
+// This is one I added to test hard-coding to the already-running portfolio
+	private static final String PORTFOLIO_SERVICE = "http://mc-portfolio-c7d3d3c0-ecee-11e8-8bb7-idc:9080/portfolio";
 	private static PortfolioServices singleton = null;
 
 	private String jwtAudience = System.getenv("JWT_AUDIENCE"); //use mpConfig instead of this
