@@ -79,7 +79,7 @@ public class Summary extends HttpServlet {
 		writer.append("    <br/>");
 		writer.append("    <form method=\"post\"/>");
 		if (editor) {
-			writer.append("      <input type=\"radio\" name=\"action\" value=\""+CREATE+"\"> Create a new portfolio<br>");
+			writer.append("      <input type=\"radio\" name=\"action\" value=\""+CREATE+"\"> Create a NEW portfolio<br>");
 		}
 			writer.append("      <input type=\"radio\" name=\"action\" value=\""+RETRIEVE+"\" checked> Retrieve selected portfolio<br>");
 		if (editor) {
@@ -102,7 +102,8 @@ public class Summary extends HttpServlet {
 		writer.append("    </form>");
 		writer.append("    <br/>");
 		writer.append("    <a href=\"https://www.ibm.com/events/think/\">");
-		writer.append("      <img src=\"footer.jpg\"/>");
+        writer.append("      <img src=\"footer.jpg\"/>");
+//		writer.append("      <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/800px-IBM_logo.svg.png"/>");
 		writer.append("    </a>");
 		writer.append("  </body>");
 		writer.append("</html>");
