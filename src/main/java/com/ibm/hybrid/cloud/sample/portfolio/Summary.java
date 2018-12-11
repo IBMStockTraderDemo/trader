@@ -79,7 +79,7 @@ public class Summary extends HttpServlet {
 		writer.append("    <br/>");
 		writer.append("    <form method=\"post\"/>");
 		if (editor) {
-			writer.append("      <input type=\"radio\" name=\"action\" value=\""+CREATE+"\"> Create a brand new portfolio<br>");
+			writer.append("      <input type=\"radio\" name=\"action\" value=\""+CREATE+"\"> Create a new portfolio<br>");
 		}
 			writer.append("      <input type=\"radio\" name=\"action\" value=\""+RETRIEVE+"\" checked> Retrieve selected portfolio<br>");
 		if (editor) {
