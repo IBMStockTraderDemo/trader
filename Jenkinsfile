@@ -1,6 +1,6 @@
 pipeline {  
     environment {
-         registry = "trader"
+         imagename = "trader"
      }
 
     agent any
@@ -13,9 +13,9 @@ pipeline {
        stage('Deliver') {
             steps {
                 script {
-                    docker.build registry
+                    docker.build imagename
                 }
-                sh '/push2cloud.sh trader'
+                sh '/push2dockerhub.sh $imagename'
             }
        }
     }
