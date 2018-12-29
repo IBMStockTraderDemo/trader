@@ -15,7 +15,7 @@ pipeline {
                 script {
                     docker.build registry
                 }
-                sh '/root/push2cloud.sh trader'
+                sh '/push2cloud.sh trader'
             }
        }
     }
