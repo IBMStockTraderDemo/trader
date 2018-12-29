@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools { 
-        maven 'maven 3'
-        jdk 'java 8'
-    }
     stages {
        stage('Build') { 
           steps {
@@ -12,7 +8,7 @@ pipeline {
        }  
        stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sh 'docker build -t trader .'
             }
        }
     }
