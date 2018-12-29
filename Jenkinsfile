@@ -1,7 +1,6 @@
 pipeline {  
     environment {
          registry = "trader"
-         registryCredential = 'dockerhub'
      }
 
     agent any
@@ -20,6 +19,9 @@ pipeline {
                 script {
                     docker.build registry
                 }
+                sh 'ibmcloud cr login'
+                sh 'docker tag trader registry.ng.blumix.net/kacz/trader'
+                sh 'docker push registry.ng.blumix.net/kacz/trader'
             }
        }
     }
