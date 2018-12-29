@@ -9,7 +9,7 @@ pipeline {
        stage('Deliver') {
             steps {
               script {
-                docker.build -t trader 
+                docker.build trader 
               }
             }
        }
