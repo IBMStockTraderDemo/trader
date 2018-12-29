@@ -13,7 +13,9 @@ pipeline {
        }  
        stage('Deliver') {
             steps {
-                sh 'ibmcloud login --apikey @ibmcloudapi.key --check-version=false'
+                sh 'ibmcloud config  --check-version=false'
+                sh 'ibmcloud login --apikey @ibmcloudapi.key'
+                sh 'ibmcloud target -o kacz@us.ibm.com -s dev'
                 script {
                     docker.build registry
                 }
