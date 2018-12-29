@@ -1,4 +1,9 @@
-pipeline {
+pipeline {  
+    environment {
+         registry = "trader"
+         registryCredential = 'dockerhub'
+     }
+
     agent any
     stages {
        stage('Build') { 
@@ -8,9 +13,9 @@ pipeline {
        }  
        stage('Deliver') {
             steps {
-              script {
-                docker.build trader 
-              }
+                script {
+                    docker.build registry
+                }
             }
        }
     }
