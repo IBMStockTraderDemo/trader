@@ -24,7 +24,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: component,
+                            componentName: $component,
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
