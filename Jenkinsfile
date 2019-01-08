@@ -24,7 +24,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: '${component}',
+                            componentName: '$component',
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
@@ -42,7 +42,7 @@ pipeline {
                                  deployWithSnapshot: true,
                                  snapshotName: '${component}-snapshot-${BUILD_NUMBER}'
                              ],
-                             deployApp: '${component}',
+                             deployApp: '$component',
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
