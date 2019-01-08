@@ -1,6 +1,6 @@
 pipeline {  
     environment {
-         imagename = "trader"
+         imagename = "trader:$BUILD_NUMBER"
      }
 
     agent any
