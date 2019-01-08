@@ -47,7 +47,7 @@ pipeline {
                              deployOnlyChanged: false,
                              deployProc: 'Deploy',
                              deployReqProps: '',
-                             deployVersions: '$BUILD_NUMBER'
+                             deployVersions: 'trader:$BUILD_NUMBER'
                          ],
                          siteName: 'master1'
                      ])
