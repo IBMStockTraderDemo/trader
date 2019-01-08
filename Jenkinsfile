@@ -1,6 +1,7 @@
 pipeline {  
     environment {
-         imagename = "trader:$BUILD_NUMBER"
+         component = "trader"
+         imagename = "${component}:${BUILD_NUMBER}"
      }
 
     agent any
@@ -23,7 +24,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: 'trader',
+                            componentName: '${component}',
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
@@ -33,21 +34,21 @@ pipeline {
                                 pushDescription: '',
                                 pushIncremental: false,
                                 pushProperties: '',
-                                pushVersion: '$BUILD_NUMBER'
+                                pushVersion: '${BUILD_NUMBER}'
                             ]
                          ],
                          deploy: [
                              createSnapshot: [
                                  deployWithSnapshot: true,
-                                 snapshotName: 'trader-snapshot-$BUILD_NUMBER'
+                                 snapshotName: '${component}-snapshot-${BUILD_NUMBER}'
                              ],
-                             deployApp: 'trader',
+                             deployApp: '${component}',
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
                              deployProc: 'Deploy',
                              deployReqProps: '',
-                             deployVersions: 'trader:$BUILD_NUMBER'
+                             deployVersions: '${component}:${BUILD_NUMBER}'
                          ],
                          siteName: 'master1'
                      ])
