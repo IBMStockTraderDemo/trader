@@ -19,7 +19,6 @@ pipeline {
             }
        }
        stage('UCD Deploy') {
-            def PWD = pwd();
             steps {
                 script {
                     step([$class: 'UCDeployPublisher',
