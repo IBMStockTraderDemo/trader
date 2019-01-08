@@ -40,15 +40,15 @@ pipeline {
                          deploy: [
                              createSnapshot: [
                                  deployWithSnapshot: true,
-                                 snapshotName: '${component}-snapshot-${BUILD_NUMBER}'
+                                 snapshotName: '$component-snapshot-$BUILD_NUMBER'
                              ],
-                             deployApp: component,
+                             deployApp: $component,
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
                              deployProc: 'Deploy',
                              deployReqProps: '',
-                             deployVersions: '${component}:${BUILD_NUMBER}'
+                             deployVersions: '$component:$BUILD_NUMBER'
                          ],
                          siteName: 'master1'
                      ])
