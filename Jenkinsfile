@@ -43,7 +43,7 @@ pipeline {
                              ],
                              deployApp: 'trader',
                              deployDesc: 'Requested from Jenkins',
-                             deployEnv: 'DEV',
+                             deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
                              deployProc: 'Deploy',
                              deployReqProps: '',
