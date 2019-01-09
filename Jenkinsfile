@@ -1,7 +1,7 @@
 pipeline {  
     environment {
          componentName = "trader"
-         imagename = "trader:${BUILD_NUMBER}"
+         imagename = "${componentName}:${BUILD_NUMBER}"
      }
 
     agent any
