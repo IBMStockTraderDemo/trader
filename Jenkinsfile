@@ -19,7 +19,7 @@ pipeline {
                 sh '/push2dockerhub.sh $imagename'
             }
        }
-       stage('UCD Deploy') {
+       stage('Deploy') {
             steps {
                 script {
                     step([$class: 'UCDeployPublisher',
