@@ -24,7 +24,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: $component,
+                            componentName: "trader",
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
@@ -40,15 +40,15 @@ pipeline {
                          deploy: [
                              createSnapshot: [
                                  deployWithSnapshot: true,
-                                 snapshotName: '$component-snapshot-$BUILD_NUMBER'
+                                 snapshotName: 'trader-snapshot-$BUILD_NUMBER'
                              ],
-                             deployApp: $component,
+                             deployApp: trader,
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
                              deployProc: 'Deploy',
                              deployReqProps: '',
-                             deployVersions: '$component:$BUILD_NUMBER'
+                             deployVersions: 'trader:$BUILD_NUMBER'
                          ],
                          siteName: 'master1'
                      ])
