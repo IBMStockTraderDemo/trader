@@ -23,7 +23,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: "trader",
+                            componentName: 'trader',
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
@@ -33,7 +33,7 @@ pipeline {
                                 pushDescription: '',
                                 pushIncremental: false,
                                 pushProperties: '',
-                                pushVersion: '${BUILD_NUMBER}'
+                                pushVersion: '$BUILD_NUMBER'
                             ]
                          ],
                          deploy: [
@@ -41,7 +41,7 @@ pipeline {
                                  deployWithSnapshot: true,
                                  snapshotName: 'trader-snapshot-$BUILD_NUMBER'
                              ],
-                             deployApp: trader,
+                             deployApp: 'trader',
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
