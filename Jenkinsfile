@@ -39,8 +39,8 @@ pipeline {
                          ],
                          deploy: [
                              createSnapshot: [
-                                 deployWithSnapshot: false,
-                                 snapshotName: "${componentName}-snapshot-$BUILD_NUMBER"
+                                 deployWithSnapshot: true,
+                                 snapshotName: "${componentName}-$BUILD_NUMBER"
                              ],
                              deployApp: componentName,
                              deployDesc: 'Requested from Jenkins',
