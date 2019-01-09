@@ -45,7 +45,7 @@ pipeline {
                              deployApp: componentName,
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
-                             deployOnlyChanged: false,
+                             deployOnlyChanged: true,
                              deployProc: 'Deploy',
                              deployReqProps: '',
                              deployVersions: imagename
