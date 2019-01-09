@@ -1,5 +1,6 @@
 pipeline {  
     environment {
+         componentName = "trader"
          imagename = "trader:${BUILD_NUMBER}"
      }
 
@@ -23,7 +24,7 @@ pipeline {
                 script {
                     step([$class: 'UCDeployPublisher',
                         component: [
-                            componentName: 'trader',
+                            componentName: componentName,
                             componentTag: '',
                             delivery: [
                                 $class: 'Push',
