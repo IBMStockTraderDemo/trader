@@ -40,9 +40,9 @@ pipeline {
                          deploy: [
                              createSnapshot: [
                                  deployWithSnapshot: true,
-                                 snapshotName: '${env.componentName}-snapshot-$BUILD_NUMBER'
+                                 snapshotName: 'trader-snapshot-$BUILD_NUMBER'
                              ],
-                             deployApp: 'trader',
+                             deployApp: componentName,
                              deployDesc: 'Requested from Jenkins',
                              deployEnv: 'DEV 1',
                              deployOnlyChanged: false,
