@@ -39,7 +39,7 @@ pipeline {
                          ],
                          deploy: [
                              createSnapshot: [
-                                 deployWithSnapshot: true,
+                                 deployWithSnapshot: false,
                                  snapshotName: "${componentName}-snapshot-$BUILD_NUMBER"
                              ],
                              deployApp: componentName,
