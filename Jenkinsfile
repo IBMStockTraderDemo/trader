@@ -1,6 +1,5 @@
 pipeline {  
     environment {
-         component = "trader"
          imagename = "trader:${BUILD_NUMBER}"
      }
 
