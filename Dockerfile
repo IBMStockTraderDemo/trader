@@ -20,8 +20,11 @@ COPY target/trader-1.0-SNAPSHOT.war /config/apps/TraderUI.war
 #apt-get needs root access
 USER root
 RUN chmod g+w /config/apps
+RUN chmod g+w /config/jvm.options
 RUN apt-get update
 RUN apt-get install curl -y
 USER 1001
 
-RUN installUtility install --acceptLicense defaultServer
+COPY lwdc/javametrics.liberty.icam-1.2.1.esa /opt/
+RUN installUtility install --acceptLicense defaultServer  && installUtility install --acceptLicense /opt/javametrics.liberty.icam-1.2.1.esa
+RUN /opt/ibm/wlp/usr/extension/liberty_dc/bin/config_unified_dc.sh -silent
